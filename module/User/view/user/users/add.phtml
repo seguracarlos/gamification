@@ -1,0 +1,73 @@
+<script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+
+<div class="row">
+	<div class="col-md-8">
+		<?php 
+		$form = $this->form;
+		$form->prepare();
+		//abrir formulario
+		echo $this->form()->openTag($form);
+		//linea para obtener el campo
+		echo $this->formlabel($form->get('name'));
+		//linea para obtener el texto del campo
+		echo $this->formElement($form->get('name'));
+
+		echo $this->formlabel($form->get('lastname'));
+		echo $this->formElement($form->get('lastname'));
+
+		echo $this->formlabel($form->get('email'));
+		echo $this->formElement($form->get('email'));
+
+		echo $this->formElement($form->get('submit'));
+		//cerrar formulario
+		echo $this->form()->closeTag();
+		?>
+	</div>
+</div>
+
+<script>
+$(document).ready(function() {
+   $('#form').validate(
+{
+rules: {
+name: {
+minlength: 2,
+required: true
+},
+lastname: {
+required: true,
+number: true
+},
+
+},
+highlight: function(element) {
+$(element).closest('.control-group').removeClass('success').addClass('error');
+},
+success: function(element) {
+element
+.text('OK!').addClass('valid')
+.closest('.control-group').removeClass('error').addClass('success');
+}
+});
+
+
+
+});
+</script>
+
+<style>
+	
+	    label.valid {
+    width: 24px;
+    height: 24px;
+    background: url(assets/img/valid.png) center center no-repeat;
+    display: inline-block;
+    text-indent: -9999px;
+    }
+    label.error {
+    font-weight: bold;
+    color: red;
+    padding: 2px 8px;
+    margin-top: 2px;
+    }
+</style>

@@ -1,0 +1,27 @@
+<?php // echo "<pre>"; print_r($this->users); exit; ?>
+<table class="table">
+	<thead>
+		<td>ID</td>
+		<td>Nombre</td>
+		<td>Insignia</td>
+		<td>Ruta</td>
+		<td>Puntos</td>
+	</thead>
+	<tbody>
+		<!--Recorrer el arreglo-->
+		<?php foreach ($this->category as $category) {?>
+		<tr>
+			<td><?php echo $category['id']; ?></td>
+			<td><?php echo $category['name']; ?></td>
+			<td><?php echo $category['badge']; ?></td>
+			<td><?php echo $category['imgpath']; ?></td>
+			<td><?php echo $category['points']; ?></td>
+			<td><a class="btn btn-primary" href="<?php echo $this->basePath()."/category/update/".$category['id'];?>">Modificar</a></td>
+			<td><a class="btn btn-warning" href="<?php echo $this->basePath()."/category/delete/".$category['id'];?>">Eliminar</a></td>
+		</tr>
+		<?php } ?>
+	</tbody>
+</table>
+
+
+<a class="btn btn-warning" href='http://localhost/gamification/public/category/add'"<?php echo $this->basePath()."category/add"?>">Agregar categoría</a>

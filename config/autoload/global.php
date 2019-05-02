@@ -15,7 +15,7 @@ return array(
     'db' => array(
     	'driver' => 'Pdo',
     	//nombre de la base
-    	'dsn' => 'mysql:dbname=crud;host=localhost',
+    	'dsn' => 'mysql:dbname=gamification;host=localhost',
     	),
     	'service_manager' => array(
     		'factories' => array(

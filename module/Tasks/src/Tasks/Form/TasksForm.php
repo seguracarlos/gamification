@@ -83,7 +83,7 @@ class TasksForm extends Form
 				'label' => 'Fecha limite :'
 			),
 			'attributes' => array(
-				'type' =>  'date',
+				'type' =>  'text',
 				'id' => 'maxDate',
 				'class' => 'datepicker',
 				'required' => 'required',

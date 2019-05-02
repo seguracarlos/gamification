@@ -18,7 +18,8 @@ class TasksService
 	}
 	//funcion que va a agregar los datos en el parametro se indica lo que se va a recibir
 	public function addTasks($formData){
-		$fechaformatoingles = ($data['maxDate'] != '') ? date('Y-m-d', strtotime($data['maxDate'])) : "0000-00-00";
+		/*echo "<pre>"; print_r($formData); exit;
+		$fechaformatoingles = ($data['maxDate'] != '') ? date('Y-m-d', strtotime($data['maxDate'])) : "0000-00-00";*/
 		//se genera un array asosiativo
 		$data = array(
 			//campos de la base
@@ -26,7 +27,7 @@ class TasksService
 			"badge" => $formData['badge'],
 			"imgpath" => $formData['imgpath'],
 			"points" => $formData['points'],
-			"maxDate" => $fechaformatoingles
+			"maxDate" => $formData['maxDate'],
 			);
 
 		$tasks = $this->tasksModel->addTasks($data);
@@ -39,7 +40,7 @@ class TasksService
 	}
 
 	public function updateTasks($formData){
-		$fechaformatoingles = ($data['maxDate'] != '') ? date('Y-m-d', strtotime($data['maxDate'])) : "0000-00-00";
+		/*$fechaformatoingles = ($data['maxDate'] != '') ? date('Y-m-d', strtotime($data['maxDate'])) : "0000-00-00";*/
 		// enviar solo los parametros que queremos modificar
 		$data = array(
 			"id" => $formData['id'],
@@ -47,7 +48,7 @@ class TasksService
 			"badge" => $formData['badge'],
 			"imgpath" => $formData['imgpath'],
 			"points" => $formData['points'],
-			"maxDate" => $fechaformatoingles
+			"maxDate" => $formData['maxDate']
 			);
 		//llamada al modelo
 		$tasks = $this->tasksModel->updateTasks($data);

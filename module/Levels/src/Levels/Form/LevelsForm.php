@@ -1,13 +1,16 @@
 <?php
-namespace Category\Form;
+namespace Levels\Form;
 //Elementos de formularios de zend
 use Zend\Form\Element;
 use Zend\Form\Form;
 
-class CategoryForm extends Form
+class LevelsForm extends Form
 {
 	public function __construct($name = null){
 		parent::__construct($name);
+
+		//mandamos a traer el metodo post
+
 		$this->setAttributes(array(
 			'method' => 'post',
 			//identificacion del formulario
@@ -41,7 +44,7 @@ class CategoryForm extends Form
 		$this->add(array(
 			'name' =>'badge',
 			'options' => array(
-				'label' => 'placa :'
+				'label' => 'Insignia :'
 			),
 			'attributes' => array(
 				'type' =>  'text',
@@ -53,11 +56,23 @@ class CategoryForm extends Form
 		$this->add(array(
 			'name' =>'imgpath',
 			'options' => array(
-				'label' => 'ruta'
+				'label' => 'Ruta :'
 			),
 			'attributes' => array(
 				'type' =>  'text',
-				'id' => '	imgpath',
+				'id' => 'imgpath',
+				'class' => 'form-control',
+				'required' => 'required',
+			)
+		));
+		$this->add(array(
+			'name' =>'minpoints',
+			'options' => array(
+				'label' => 'MinPuntos :'
+			),
+			'attributes' => array(
+				'type' =>  'number',
+				'id' => 'minpoints',
 				'class' => 'form-control',
 				'required' => 'required',
 			)
@@ -65,7 +80,7 @@ class CategoryForm extends Form
 		$this->add(array(
 			'name' =>'points',
 			'options' => array(
-				'label' => 'puntos :'
+				'label' => 'MaxPuntos :'
 			),
 			'attributes' => array(
 				'type' =>  'number',
@@ -74,6 +89,7 @@ class CategoryForm extends Form
 				'required' => 'required',
 			)
 		));
+		
 		//agregar un boton
 		$this->add(array(
 			'name' => 'submit',

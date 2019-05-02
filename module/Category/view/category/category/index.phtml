@@ -1,4 +1,4 @@
-<?php // echo "<pre>"; print_r($this->users); exit; ?>
+<?php // echo "<pre>"; print_r($this->category); exit; ?>
 <table class="table">
 	<thead>
 		<td>ID</td>
@@ -10,15 +10,15 @@
 	<tbody>
 		<!--Recorrer el arreglo-->
 		<?php foreach ($this->category as $category) {?>
-		<tr>
-			<td><?php echo $category['id']; ?></td>
-			<td><?php echo $category['name']; ?></td>
-			<td><?php echo $category['badge']; ?></td>
-			<td><?php echo $category['imgpath']; ?></td>
-			<td><?php echo $category['points']; ?></td>
-			<td><a class="btn btn-primary" href="<?php echo $this->basePath()."/category/update/".$category['id'];?>">Modificar</a></td>
-			<td><a class="btn btn-warning" href="<?php echo $this->basePath()."/category/delete/".$category['id'];?>">Eliminar</a></td>
-		</tr>
+			<tr>
+				<td><?php echo $category['id']; ?></td>
+				<td><?php echo $category['name']; ?></td>
+				<td><?php echo $category['badge']; ?></td>
+				<td><?php echo $category['imgpath']; ?></td>
+				<td><?php echo $category['points']; ?></td>
+				<td><a class="btn btn-primary" href="<?php echo $this->basePath()."/category/update/".$category['id'];?>">Modificar</a></td>
+				<td><a class="btn btn-warning" href="<?php echo $this->basePath()."/category/delete/".$category['id'];?>">Eliminar</a></td>
+			</tr>
 		<?php } ?>
 	</tbody>
 </table>

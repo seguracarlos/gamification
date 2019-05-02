@@ -1,0 +1,29 @@
+<?php // echo "<pre>"; print_r($this->users); exit; ?>
+<table class="table">
+	<thead>
+		<td>ID</td>
+		<td>Nombre</td>
+		<td>Insignia</td>
+		<td>Ruta</td>
+		<td>Minimo de puntos</td>
+		<td>Puntos</td>
+	</thead>
+	<tbody>
+		<!--Recorrer el arreglo-->
+		<?php foreach ($this->levels as $levels) {?>
+			<tr>
+				<td><?php echo $levels['id']; ?></td>
+				<td><?php echo $levels['name']; ?></td>
+				<td><?php echo $levels['badge']; ?></td>
+				<td><?php echo $levels['imgpath']; ?></td>
+				<td><?php echo $levels['minpoints']; ?></td>
+				<td><?php echo $levels['points']; ?></td>
+				<td><a class="btn btn-primary" href="<?php echo $this->basePath()."/levels/update/".$levels['id'];?>">Modificar</a></td>
+				<td><a class="btn btn-warning" href="<?php echo $this->basePath()."/levels/delete/".$levels['id'];?>">Eliminar</a></td>
+			</tr>
+		<?php } ?>
+	</tbody>
+</table>
+
+
+<a class="btn btn-warning" href='http://localhost/gamification/public/levels/add'"<?php echo $this->basePath()."levels/add"?>">Agregar nivel</a>

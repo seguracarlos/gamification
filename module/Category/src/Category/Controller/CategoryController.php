@@ -32,10 +32,10 @@ class CategoryController extends AbstractActionController
 			//imprime
 			//echo "<pre>"; print_r($formData);exit;
 			$category = $this->categoryService->addCategory($formData);
-				if ($category) {
+			if ($category) {
 					# valida que la variable tenga algo para regresarlo.
-					$this->redirect()->toUrl($this->getRequest()->getBAseUrl().'/category');
-				}
+				$this->redirect()->toUrl($this->getRequest()->getBAseUrl().'/category');
+			}
 		}
 		return array('form'=>$form);
 		
@@ -56,13 +56,13 @@ class CategoryController extends AbstractActionController
 			//imprime
 			//echo "<pre>"; print_r($formData);exit;
 			$category = $this->categoryService->updateCategory($formData);
-				if ($category) {
+			if ($category) {
 					# valida que la variable tenga algo para regresarlo.
-					$this->redirect()->toUrl($this->getRequest()->getBAseUrl().'/category');
-				}
+				$this->redirect()->toUrl($this->getRequest()->getBAseUrl().'/category');
+			}
 		}
 		return array('form'=>$form);
-		}
+	}
 	public function deleteAction(){
 		$id_category = $this->params()->fromRoute("id");
 		$category = $this->categoryService->deleteCategory($id_category);

@@ -25,7 +25,7 @@ class CategoryService
 			"badge" => $formData['badge'],
 			"imgpath" => $formData['imgpath'],
 			"points" => $formData['points']
-			);
+		);
 
 		$category = $this->categoryModel->addCategory($data);
 		return $category;
@@ -45,7 +45,7 @@ class CategoryService
 			"badge" => $formData['badge'],
 			"imgpath" => $formData['imgpath'],
 			"points" => $formData['points']
-			);
+		);
 		//llamada al modelo
 		$category = $this->categoryModel->updateCategory($data);
 		return $category;

@@ -8,15 +8,17 @@
 		//abrir formulario
 		echo $this->form()->openTag($form);
 		//linea para obtener el campo
+		echo $this->formElement($form->get('id'));
+
 		echo $this->formlabel($form->get('name'));
 		//linea para obtener el texto del campo
 		echo $this->formElement($form->get('name'));
 
-		echo $this->formlabel($form->get('lastname'));
-		echo $this->formElement($form->get('lastname'));
+		echo $this->formlabel($form->get('Levels_idLvl'));
+		echo $this->formElement($form->get('Levels_idLvl'));
 
-		echo $this->formlabel($form->get('email'));
-		echo $this->formElement($form->get('email'));
+		echo $this->formlabel($form->get('points'));
+		echo $this->formElement($form->get('points'));
 
 		echo $this->formElement($form->get('submit'));
 		//cerrar formulario

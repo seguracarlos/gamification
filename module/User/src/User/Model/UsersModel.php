@@ -53,19 +53,19 @@ class UsersModel extends TableGateway
 		//echo "<pre>"; print_r($result); exit;
 		//return $result[0];
 		$sql = new Sql($this->dbAdapter);
-		$select = $this->dbAdapter->query("select * from users where id_users=$id_user",Adapter::QUERY_MODE_EXECUTE);
+		$select = $this->dbAdapter->query("select * from users where id=$id_user",Adapter::QUERY_MODE_EXECUTE);
 		$result = $select->toArray();
 		//imprime echo "<pre>"; print_r($result); exit;
 		return $result[0];
 	}
 	public function updateUser($data){
 		// con esta linea mandamos el update
-		$user = $this->update($data, array("id_users"=>$data['id_users']));
+		$user = $this->update($data, array("id"=>$data['id']));
 		return $user;
 	}
 	public function deleteUser($id_user){
 		//"" se pone el nombre de la base de datos.
-		$delete=$this->delete(array("id_users"=>$id_user));
+		$delete=$this->delete(array("id"=>$id_user));
 	         return $delete;
 	}
 }

@@ -22,8 +22,8 @@ class UsersService
 		$data = array(
 			//campos de la base
 			"name" => $formData['name'],
-			"lastname" => $formData['lastname'],
-			"email" => $formData['email']
+			"Levels_idLvl" => '1',
+			"points" => '0'
 			);
 
 		$user = $this->usersModel->addUser($data);
@@ -38,10 +38,10 @@ class UsersService
 	public function updateUser($formData){
 		// enviar solo los parametros que queremos modificar
 		$data = array(
-			"id_users" => $formData['id_users'],
+			"id" => $formData['id'],
 			"name" => $formData['name'],
-			"lastname" => $formData['lastname'],
-			"email" => $formData['email']
+			"Levels_idLvl" => $formData['Levels_idLvl'],
+			"points" => $formData['points']
 			);
 		//llamada al modelo
 		$user = $this->usersModel->updateUser($data);

@@ -18,7 +18,7 @@ class UserForm extends Form
 			 ));
 		// para 
 		$this->add(array(
-			'name' =>'id_users',
+			'name' =>'id',
 			'attributes' => array(
 				// type hidden por que es un campo oculto
 				'type' => 'hidden'
@@ -42,24 +42,24 @@ class UserForm extends Form
 				)
 			));
 		$this->add(array(
-			'name' =>'lastname',
+			'name' =>'Levels_idLvl',
 			'options' => array(
-				'label' => 'Matricula :'
+				'label' => 'Nivel :'
 				),
 			'attributes' => array(
 				'type' =>  'text',
-				'id' => 'lastname',
+				'id' => 'Levels_idLvl',
 				'class' => 'form-control',
 				'required' => 'required',
 				)
 			));
 		$this->add(array(
-			'name' =>'email',
+			'name' =>'points',
 			'options' => array(
-				'label' => 'Email :'
+				'label' => 'Puntos :'
 				),
 			'attributes' => array(
-				'type' =>  'email',
+				'type' =>  'text',
 				//le pone estilo a los campos
 				'class' => 'form-control',
 				'required' => 'required',

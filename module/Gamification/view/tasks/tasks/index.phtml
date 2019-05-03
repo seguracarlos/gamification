@@ -1,0 +1,58 @@
+<link type="text/css" rel="stylesheet" href="<?php echo $this->basePath('/gamificationlive/sweetalert2/sweetalert2.min.css'); ?>" />
+<script type="text/javascript" src="<?php echo $this->basePath('/gamificationlive/sweetalert2/sweetalert2.min.js'); ?>"></script>
+
+
+<?php // echo "<pre>"; print_r($this->tasks); exit; ?>
+	<table class="table">
+		<thead>
+			<td>ID</td>
+			<td>Nombre</td>
+			<td>Insignia</td>
+			<td>Ruta</td>
+			<td>Puntos</td>
+			<td>Fecha limite</td>
+		</thead>
+		<tbody>
+			<!--Recorrer el arreglo-->
+			<?php foreach ($this->tasks as $tasks) {?>
+			<tr>
+				<td><?php echo $tasks['id']; ?></td>
+				<td><?php echo $tasks['name']; ?></td>
+				<td><?php echo $tasks['badge']; ?></td>
+				<td><?php echo $tasks['imgpath']; ?></td>
+				<td><?php echo $tasks['points']; ?></td>
+				<td><?php echo $tasks['maxDate']; ?></td>
+				<td><a class="btn btn-primary" href="<?php echo $this->basePath()."/tasks/update/".$tasks['id'];?>">Modificar</a></td>
+				<td><a type="button" value="Alerta" onClick="eliminar()" class="btn btn-warning" href="<?php echo $this->basePath()."/tasks/delete/".$tasks['id'];?>">Eliminar</a></td>
+			</tr>
+			<?php } ?>
+		</tbody>
+	</table>
+
+	<input type="button" value="Alerta" onClick="swal('Registro eliminado correctamente');">
+
+	<a class="btn btn-warning" href='http://localhost/gamification/public/tasks/add'"<?php echo $this->basePath()."tasks/add"?>">Agregar usuario</a>
+
+	<script>
+		function eliminar(){
+
+			swal({
+				title: "¿Estás seguro?",
+				text: "No podrás recuperar este archivo!",
+				type: "advertencia",
+				showCancelButton: true,
+				confirmButtonClass: "btn-danger",
+				confirmButtonText: "Si, eliminar!",
+				cancelButtonText: "No, cancel!",
+				closeOnConfirm: false,
+				closeOnCancel: false
+			},
+			function(isConfirm) {
+				if (isConfirm) {
+					swal("Eliminado!", "El archivo ha sido eliminado.", "success");
+				} else {
+					swal("Cancelado", "Su archivo esta seguro: :)", "error");
+				}
+			});
+		}
+		</script>

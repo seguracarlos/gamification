@@ -16,12 +16,12 @@
 				<td><?php echo $category['badge']; ?></td>
 				<td><?php echo $category['imgpath']; ?></td>
 				<td><?php echo $category['points']; ?></td>
-				<td><a class="btn btn-primary" href="<?php echo $this->basePath()."/category/update/".$category['id'];?>">Modificar</a></td>
-				<td><a class="btn btn-warning" href="<?php echo $this->basePath()."/category/delete/".$category['id'];?>">Eliminar</a></td>
+				<td><a class="btn btn-primary" href="<?php echo $this->basePath()."/gamification/category/update/".$category['id'];?>">Modificar</a></td>
+				<td><a class="btn btn-warning" href="<?php echo $this->basePath()."/gamification/category/delete/".$category['id'];?>">Eliminar</a></td>
 			</tr>
 		<?php } ?>
 	</tbody>
 </table>
 
 
-<a class="btn btn-warning" href='http://localhost/gamification/public/category/add'"<?php echo $this->basePath()."category/add"?>">Agregar categoría</a>
+<a class="btn btn-warning" href="<?php echo $this->basePath()."/gamification/category/add"?>">Agregar categoría</a>

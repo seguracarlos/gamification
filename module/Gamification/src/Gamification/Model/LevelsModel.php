@@ -1,5 +1,5 @@
 <?php
-namespace Levels\Model;
+namespace Gamification\Model;
 
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Db\Adapter\Adapter;

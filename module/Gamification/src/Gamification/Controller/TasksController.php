@@ -4,9 +4,9 @@ namespace Gamification\Controller;
 //librerias para que el controller use las vistas
 use Zend\View\Model\ViewModel;
 use Zend\Mvc\Controller\AbstractActionController;
-use Tasks\Services\TasksService;
+use Gamification\Services\TasksService;
 //inclucion de formulario
-use Tasks\Form\TasksForm;
+use Gamification\Form\TasksForm;
 
 class TasksController extends AbstractActionController
 {
@@ -34,7 +34,7 @@ class TasksController extends AbstractActionController
 			$tasks = $this->tasksService->addTasks($formData);
 			if ($tasks) {
 					# valida que la variable tenga algo para regresarlo.
-				$this->redirect()->toUrl($this->getRequest()->getBAseUrl().'/tasks');
+				$this->redirect()->toUrl($this->getRequest()->getBAseUrl().'/gamification/tasks');
 			}
 		}
 		return array('form'=>$form);
@@ -56,7 +56,7 @@ class TasksController extends AbstractActionController
 			$tasks = $this->tasksService->updateTasks($formData);
 			if ($tasks) {
 					# valida que la variable tenga algo para regresarlo.
-				$this->redirect()->toUrl($this->getRequest()->getBAseUrl().'/tasks');
+				$this->redirect()->toUrl($this->getRequest()->getBAseUrl().'/gamification/tasks');
 			}
 		}
 		return array('form'=>$form);
@@ -65,6 +65,6 @@ class TasksController extends AbstractActionController
 		$id_tasks = $this->params()->fromRoute("id");
 		$tasks = $this->tasksService->deleteTasks($id_tasks);
 		//redirecciona al index del listado.
-		return $this->redirect()->toUrl($this->getRequest()->getBaseUrl().'/tasks/');
+		return $this->redirect()->toUrl($this->getRequest()->getBaseUrl().'/gamification/tasks/');
 	}
 }

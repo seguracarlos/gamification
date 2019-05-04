@@ -22,8 +22,8 @@
 				<td><?php echo $tasks['imgpath']; ?></td>
 				<td><?php echo $tasks['points']; ?></td>
 				<td><?php echo $tasks['maxDate']; ?></td>
-				<td><a class="btn btn-primary" href="<?php echo $this->basePath()."/tasks/update/".$tasks['id'];?>">Modificar</a></td>
-				<td><a type="button" value="Alerta" onClick="eliminar()" class="btn btn-warning" href="<?php echo $this->basePath()."/tasks/delete/".$tasks['id'];?>">Eliminar</a></td>
+				<td><a class="btn btn-primary" href="<?php echo $this->basePath()."/gamification/tasks/update/".$tasks['id'];?>">Modificar</a></td>
+				<td><a type="button" value="Alerta" onClick="eliminar()" class="btn btn-warning" href="<?php echo $this->basePath()."/gamification/tasks/delete/".$tasks['id'];?>">Eliminar</a></td>
 			</tr>
 			<?php } ?>
 		</tbody>
@@ -31,7 +31,7 @@
 
 	<input type="button" value="Alerta" onClick="swal('Registro eliminado correctamente');">
 
-	<a class="btn btn-warning" href='http://localhost/gamification/public/tasks/add'"<?php echo $this->basePath()."tasks/add"?>">Agregar usuario</a>
+	<a class="btn btn-warning" href="<?php echo $this->basePath()."/gamification/tasks/add"?>">Agregar usuario</a>
 
 	<script>
 		function eliminar(){

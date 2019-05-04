@@ -4,9 +4,9 @@ namespace Gamification\Controller;
 //librerias para que el controller use las vistas
 use Zend\View\Model\ViewModel;
 use Zend\Mvc\Controller\AbstractActionController;
-use User\Services\UsersService;
+use Gamification\Services\UsersService;
 //inclucion de formulario
-use User\Form\UserForm;
+use Gamification\Form\UserForm;
 
 class UsersController extends AbstractActionController
 {
@@ -34,7 +34,7 @@ class UsersController extends AbstractActionController
 			$user = $this->userService->addUser($formData);
 				if ($user) {
 					# valida que la variable tenga algo para regresarlo.
-					$this->redirect()->toUrl($this->getRequest()->getBAseUrl().'/user');
+					$this->redirect()->toUrl($this->getRequest()->getBAseUrl().'/gamification/users');
 				}
 		}
 		return array('form'=>$form);
@@ -57,7 +57,7 @@ class UsersController extends AbstractActionController
 			$user = $this->userService->updateUser($formData);
 				if ($user) {
 					# valida que la variable tenga algo para regresarlo.
-					$this->redirect()->toUrl($this->getRequest()->getBAseUrl().'/user');
+					$this->redirect()->toUrl($this->getRequest()->getBAseUrl().'/gamification/users');
 				}
 		}
 		return array('form'=>$form);
@@ -66,6 +66,6 @@ class UsersController extends AbstractActionController
 		$id_user = $this->params()->fromRoute("id");
 		$user = $this->userService->deleteUser($id_user);
 		//redirecciona al index del listado.
-		return $this->redirect()->toUrl($this->getRequest()->getBaseUrl().'/user/');
+		return $this->redirect()->toUrl($this->getRequest()->getBaseUrl().'/gamification/users');
 	}
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace User\Services;
+namespace Gamification\Services;
 //incluir model
-use User\Model\UsersModel;
+use Gamification\Model\UsersModel;
 
 class UsersService
 {

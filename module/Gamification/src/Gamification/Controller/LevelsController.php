@@ -4,9 +4,9 @@ namespace Gamification\Controller;
 //librerias para que el controller use las vistas
 use Zend\View\Model\ViewModel;
 use Zend\Mvc\Controller\AbstractActionController;
-use Levels\Services\LevelsService;
+use Gamification\Services\LevelsService;
 //inclucion de formulario
-use Levels\Form\LevelsForm;
+use Gamification\Form\LevelsForm;
 
 class LevelsController extends AbstractActionController
 {
@@ -32,7 +32,7 @@ class LevelsController extends AbstractActionController
 			$levels = $this->levelsService->addLevels($formData);
 			if ($levels) {
 					# valida que la variable tenga algo para regresarlo.
-				$this->redirect()->toUrl($this->getRequest()->getBAseUrl().'/levels');
+				$this->redirect()->toUrl($this->getRequest()->getBAseUrl().'/gamification/levels');
 			}
 		}
 		return array('form'=>$form);
@@ -53,7 +53,7 @@ class LevelsController extends AbstractActionController
 			$levels = $this->levelsService->updateLevels($formData);
 			if ($levels) {
 					# valida que la variable tenga algo para regresarlo.
-				$this->redirect()->toUrl($this->getRequest()->getBAseUrl().'/levels');
+				$this->redirect()->toUrl($this->getRequest()->getBAseUrl().'/gamification/levels/');
 			}
 		}
 		return array('form'=>$form);
@@ -62,6 +62,6 @@ class LevelsController extends AbstractActionController
 		$id_levels = $this->params()->fromRoute("id");
 		$levels = $this->levelsService->deleteLevels($id_levels);
 		//redirecciona al index del listado.
-		return $this->redirect()->toUrl($this->getRequest()->getBaseUrl().'/levels/');
+		return $this->redirect()->toUrl($this->getRequest()->getBaseUrl().'/gamification/levels');
 	}
 }

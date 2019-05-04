@@ -14,12 +14,12 @@
 			<td><?php echo $user['name']; ?></td>
 			<td><?php echo $user['Levels_idLvl']; ?></td>
 			<td><?php echo $user['points']; ?></td>
-			<td><a class="btn btn-primary" href="<?php echo $this->basePath()."/user/update/".$user['id'];?>">Modificar</a></td>
-			<td><a class="btn btn-warning" href="<?php echo $this->basePath()."/user/delete/".$user['id'];?>">Eliminar</a></td>
+			<td><a class="btn btn-primary" href="<?php echo $this->basePath()."/gamification/users/update/".$user['id'];?>">Modificar</a></td>
+			<td><a class="btn btn-warning" href="<?php echo $this->basePath()."/gamification/users/delete/".$user['id'];?>">Eliminar</a></td>
 		</tr>
 		<?php } ?>
 	</tbody>
 </table>
 
 
-<a class="btn btn-warning" href="<?php echo $this->basePath()."/user/add"?>">Agregar usuario</a>
+<a class="btn btn-warning" href="<?php echo $this->basePath()."/gamification/users/add"?>">Agregar usuario</a>

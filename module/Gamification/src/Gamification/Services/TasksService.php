@@ -1,8 +1,8 @@
 <?php
 
-namespace Tasks\Services;
+namespace Gamification\Services;
 //incluir model
-use Tasks\Model\TasksModel;
+use Gamification\Model\TasksModel;
 
 class TasksService
 {

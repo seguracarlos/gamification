@@ -18,12 +18,12 @@
 				<td><?php echo $levels['imgpath']; ?></td>
 				<td><?php echo $levels['minpoints']; ?></td>
 				<td><?php echo $levels['points']; ?></td>
-				<td><a class="btn btn-primary" href="<?php echo $this->basePath()."/levels/update/".$levels['id'];?>">Modificar</a></td>
-				<td><a class="btn btn-warning" href="<?php echo $this->basePath()."/levels/delete/".$levels['id'];?>">Eliminar</a></td>
+				<td><a class="btn btn-primary" href="<?php echo $this->basePath()."/gamification/levels/update/".$levels['id'];?>">Modificar</a></td>
+				<td><a class="btn btn-warning" href="<?php echo $this->basePath()."/gamification/levels/delete/".$levels['id'];?>">Eliminar</a></td>
 			</tr>
 		<?php } ?>
 	</tbody>
 </table>
 
 
-<a class="btn btn-warning" href='http://localhost/gamification/public/levels/add'"<?php echo $this->basePath()."levels/add"?>">Agregar nivel</a>
+<a class="btn btn-warning" href="<?php echo $this->basePath()."/gamification/levels/add"?>">Agregar nivel</a>

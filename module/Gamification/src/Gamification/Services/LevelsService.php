@@ -1,8 +1,8 @@
 <?php
 
-namespace Levels\Services;
+namespace Gamification\Services;
 //incluir model
-use Levels\Model\LevelsModel;
+use Gamification\Model\LevelsModel;
 
 class LevelsService
 {

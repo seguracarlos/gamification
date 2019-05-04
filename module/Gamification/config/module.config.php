@@ -6,7 +6,7 @@ return array(
 				// llamado del controlador
 			'Gamification\Controller\Gamification' => 'Gamification\Controller\GamificationController',
 			'Gamification\Controller\Category' => 'Gamification\Controller\CategoryController',
-			'Gamification\Controller\User' => 'Gamification\Controller\UserController',
+			'Gamification\Controller\Users' => 'Gamification\Controller\UsersController',
 			'Gamification\Controller\Tasks' => 'Gamification\Controller\TasksController',
 			'Gamification\Controller\Levels' => 'Gamification\Controller\LevelsController',
 		),		

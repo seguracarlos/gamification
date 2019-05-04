@@ -1,8 +1,8 @@
 <?php
 
-namespace Category\Services;
+namespace Gamification\Services;
 //incluir model
-use Category\Model\CategoryModel;
+use Gamification\Model\CategoryModel;
 
 class CategoryService
 {

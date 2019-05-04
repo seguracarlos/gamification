@@ -4,9 +4,9 @@ namespace Gamification\Controller;
 //librerias para que el controller use las vistas
 use Zend\View\Model\ViewModel;
 use Zend\Mvc\Controller\AbstractActionController;
-use Category\Services\CategoryService;
+use Gamification\Services\CategoryService;
 //inclucion de formulario
-use Category\Form\CategoryForm;
+use Gamification\Form\CategoryForm;
 
 class CategoryController extends AbstractActionController
 {
@@ -34,7 +34,7 @@ class CategoryController extends AbstractActionController
 			$category = $this->categoryService->addCategory($formData);
 			if ($category) {
 					# valida que la variable tenga algo para regresarlo.
-				$this->redirect()->toUrl($this->getRequest()->getBAseUrl().'/category');
+				$this->redirect()->toUrl($this->getRequest()->getBaseUrl().'/gamification/category');
 			}
 		}
 		return array('form'=>$form);
@@ -58,7 +58,7 @@ class CategoryController extends AbstractActionController
 			$category = $this->categoryService->updateCategory($formData);
 			if ($category) {
 					# valida que la variable tenga algo para regresarlo.
-				$this->redirect()->toUrl($this->getRequest()->getBAseUrl().'/category');
+				$this->redirect()->toUrl($this->getRequest()->getBAseUrl().'/gamification/category');
 			}
 		}
 		return array('form'=>$form);
@@ -67,6 +67,6 @@ class CategoryController extends AbstractActionController
 		$id_category = $this->params()->fromRoute("id");
 		$category = $this->categoryService->deleteCategory($id_category);
 		//redirecciona al index del listado.
-		return $this->redirect()->toUrl($this->getRequest()->getBaseUrl().'/category/');
+		return $this->redirect()->toUrl($this->getRequest()->getBaseUrl().'/gamification/category');
 	}
 }

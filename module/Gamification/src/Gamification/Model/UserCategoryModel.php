@@ -21,17 +21,19 @@ class UserCategoryModel extends TableGateway
 	}
 	
 	//
-	public function getCategoryByUser($id_category){
+	public function getCategoryByUser($id_user){
 		$sql = new Sql($this->dbAdapter);
 		$select = $sql->select();
 		$select->from($this->table)
 		->join('categories', 'categories.id = usercategory.id_category')
-		->where(array('id' => $id_category));
+		->join('users', 'users.id = usercategory.id_user')
+
+		->where(array('id_category' => $id_user));
 	}
+     
 
-
-	//Actualizar Tarea por Usuario 
-	//ID_USER,ID_TASK
+	//Actualizar Categoria por Usuario 
+	//id_users,id_Category
 	public function updateUserCategory($data){
 		$connection = $this->dbAdapter->getDriver()->getConnection();
 		$connection->beginTransaction();

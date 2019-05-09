@@ -8,34 +8,53 @@ use Zend\Db\Sql\Select;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\Feature;
 
-class UserTaskModel extends TableGateway
+class PlayModel extends TableGateway
 {
 	private $dbAdapter;
 
 	public function   __construct(){
 		$this->dbAdapter = \Zend\Db\TableGateway\Feature\GlobalAdapterFeature::getStaticAdapter();
-		$this->table = 'usertask';
+		$this-> table = 'usertask';
 		$this->featureSet = new Feature\FeatureSet();
 		$this->featureSet->addFeature(new Feature\GlobalAdapterFeature());
 		$this->initialize();
 	}
 	
-	
+	//
 	public function getTaskMadeByUser($id_user){
 		$sql = new Sql($this->dbAdapter);
 		$select = $sql->select();
-		$select->from($this->table)
-		//->join('tasks', 'usertask.id = tasks.id')
-		->where(array('Users_iduser' => $id_user))
-		->where(array('isDone' => 1));
-		$selectString = $sql->getSqlStringForSqlObject($select);
-		$execute      = $this->dbAdapter->query($selectString, Adapter::QUERY_MODE_EXECUTE);
-		$result       = $execute->toArray();
-		return $result;
+		$select->from('usertask')
+		->join('tasks', 'tasks.id = usertask.id')
+		->where(array('Users_iduser' => $id_user));
+	}
+	
+	
+	public function getAchievmentsMadeByUser($id_user){
+	    $sql = new Sql($this->dbAdapter);
+	    $select = $sql->select();
+	    $select->from('usertask')
+	    ->join('tasks', 'tasks.id = usertask.id')
+	    ->where(array('Users_iduser' => $id_user));
+	}
+	
+	public function getAchievementsWithTaskByCategory($id_category){
+// 	    $sql = new Sql($this->dbAdapter);
+// 	    $select = $sql->select();
+// 	    $select->from('categories')
+// 	    ->join('achievements', 'achievements.id = achivetask.id_achive')
+// 	    //->join('achivetask', 'achivetask.id_achive = achievements.id')
+// 	    //->join('tasks', 'achivetask.id_task = tasks.id')
+// 	    ->where(array('categories.id' => $id_category));
+// 	    $selectString = $sql->getSqlStringForSqlObject($select);
+// 	    $execute      = $this->dbAdapter->query($selectString, Adapter::QUERY_MODE_EXECUTE);
+// 	    $result       = $execute->toArray();
+// 	    print_r($result);exit;
+// 	    return $result;
 	}
 	
 	//Guardar Tarea por Usuario
-	public function addUserTask($data){
+	public function addUserFinishedTask($data){
 		//inserta el array desde el service
 		$this->insert($data);
 		return $data;
@@ -43,7 +62,7 @@ class UserTaskModel extends TableGateway
 	
 	//Actualizar Tarea por Usuario 
 	//ID_USER,ID_TASK
-	public function updateUserTask($data){
+	public function updateUserTask($id_user,$id_task){
 		$connection = $this->dbAdapter->getDriver()->getConnection();
 		$connection->beginTransaction();
 		$updatedTask = $this->update($data, array("id" => $data['id_task'], "Users_iduser" => $data['id_user']));
@@ -52,7 +71,7 @@ class UserTaskModel extends TableGateway
 	}
 	
 	//Agregar Puntos Usuario
-	public function updateUserPointsByTask($id_user,$points){
+	public function updateUserPoints($id_user){
 		$sql    = new Sql( $this->adapter );
 		$update = $sql->update();
 		$update->table( 'users' );

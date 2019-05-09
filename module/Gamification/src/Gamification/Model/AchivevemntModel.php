@@ -8,61 +8,54 @@ use Zend\Db\Sql\Select;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\Feature;
 
-class TasksModel extends TableGateway
+class AchivevemntModel extends TableGateway
 {
 	private $dbAdapter;
 
 	public function   __construct(){
 		$this->dbAdapter = \Zend\Db\TableGateway\Feature\GlobalAdapterFeature::getStaticAdapter();
-		$this->table = 'tasks';
+		$this->table = 'achievements';
 		$this->featureSet = new Feature\FeatureSet();
 		$this->featureSet->addFeature(new Feature\GlobalAdapterFeature());
 		$this->initialize();
 	}
-	public function   getAllTasks(){
+	public function getAllAchievements(){
 		//select from
 		$select = $this->select();
-		$tasks = $select->toArray();
-		return $tasks;
+		$category= $select->toArray();
+		//imprime un array
+		//print_r($category);
+		return $category;
 	}
 	//Se crea funcion 	que recibira arreglo
-	public function  addTasks($data){
+	public function  addAchievement($data){
 		//inserta el array desde el service
 		$this->insert($data);
 		return $data;
 	}
 	//
-	public function getTasksById($id_tasks){
-
-		$sql = new Sql($this->dbAdapter);
-		$select = $this->dbAdapter->query("select * from tasks where id=$id_tasks",Adapter::QUERY_MODE_EXECUTE);
-		$result = $select->toArray();
-		//imprime echo "<pre>"; print_r($result); exit;
-		return $result[0];
-	}
 	
-	public function getTasksByAchievement($id_achievement){
+	public function getAchievementsByCategory($id_category){
 	    $sql = new Sql($this->dbAdapter);
 	    $select = $sql->select();
-	    $select->from('achievements')
-	    ->join('achivetask', 'achivetask.id_achive = achievements.id')
-	    ->join('tasks', 'tasks.id = achivetask.id_task')
-	    ->where(array('id_achive' => $id_achievement));
-	    
+	    $select->from('achivecategory')
+	    ->join('achievements', 'achivecategory.id_achive = achievements.id')
+	    ->where(array('id_category' => $id_category));
 	    $selectString = $sql->getSqlStringForSqlObject($select);
 	    $execute      = $this->dbAdapter->query($selectString, Adapter::QUERY_MODE_EXECUTE);
 	    $result       = $execute->toArray();
 	    return $result;
+	    	    
 	}
 	
-	public function updateTasks($data){
+		
+	public function updateAchievement($data){
 		// con esta linea mandamos el update
-		$tasks = $this->update($data, array("id"=>$data['id']));
-		return $tasks;
+
+		$achievement = $this->update($data, array("id"=>$data['id']));
+		//echo "<pre>"; print_r($category); exit;
+		return $achievement;
+
 	}
-	public function deleteTasks($id_tasks){
-		//"" se pone el nombre de la base de datos.
-		$delete=$this->delete(array("id"=>$id_tasks));
-		return $delete;
-	}
+
 }

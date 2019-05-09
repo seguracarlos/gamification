@@ -61,7 +61,8 @@ class UsersModel extends TableGateway
 	public function updateUser($data){
 		// con esta linea mandamos el update
 		$user = $this->update($data, array("id"=>$data['id']));
-		return $user;
+		return $data;
+		
 	}
 	public function deleteUser($id_user){
 		//"" se pone el nombre de la base de datos.

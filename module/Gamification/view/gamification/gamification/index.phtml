@@ -5,7 +5,9 @@
         <div class="panel panel-default">
             <div class="panel-heading">
 	        <label>Usuario: <?php echo $this->user['name'];?></label><br>
-	        <label>Categoria: .....</label><br>
+	        <label>Categoria: <?php echo $this->categoryByUser[0]['name'];?></label><br>
+	       <!-- <label>Punos de la Categoria: <?php echo $this->categoryByUser[0]['points'];?></label><br>-->
+	        <label>Nivel: <?php echo $this->levelsByUser[0]['name'];?></label><br>
     	    <label id="points">Puntos: <?php echo $this->user['points'];?></label><br>   
             </div>
             <div class="panel-body">

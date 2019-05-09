@@ -28,6 +28,34 @@ class PlayModel extends TableGateway
 		->join('tasks', 'tasks.id = usertask.id')
 		->where(array('Users_iduser' => $id_user));
 	}
+
+	public function getCategoryByUser($id_user){		
+		$sql = new Sql($this->dbAdapter);
+		$select = $sql->select();
+		$select->from('usercategory')
+		->join('categories', 'categories.id = usercategory.id_category')
+		->where(array('id_category' => $id_user));
+		$selectString = $sql->getSqlStringForSqlObject($select);
+		 $execute      = $this->dbAdapter->query($selectString, Adapter::QUERY_MODE_EXECUTE);
+        $result       = $execute->toArray();
+	    //print_r($result);exit;
+	    return $result;
+
+	}
+
+	public function getLevelsByUser($id_user){		
+		$sql = new Sql($this->dbAdapter);
+		$select = $sql->select();
+		$select->from('users')
+		->join('levels', 'levels.id = users.Levels_idLvl')
+		->where(array('Levels_idLvl' => $id_user));
+		$selectString = $sql->getSqlStringForSqlObject($select);
+		 $execute      = $this->dbAdapter->query($selectString, Adapter::QUERY_MODE_EXECUTE);
+        $result       = $execute->toArray();
+	    //print_r($result);exit;
+	    return $result;
+
+	}
 	
 	
 	public function getAchievmentsMadeByUser($id_user){

@@ -104,7 +104,7 @@ public class Play {
 	 * 
 	 * @param id
 	 */
-	public String getCategoryByUser(int id){
+	public String getCategoriesByUser(int id){
 		return "";
 	}
 

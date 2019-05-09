@@ -12,7 +12,7 @@ class UserCategoryService
 		$this->usercategoryModel = new UserCategoryModel();
 	}
 	
-	public function getCategoryByUser($id_user){
+	public function getCategoriesByUser($id_user){
 		
 		$usercategory = $this->usercategoryModel->getCategoryByUser($id_user);
 		echo "<pre>"; print_r($usercategory);exit;

@@ -10,6 +10,7 @@ use Gamification\Model\TasksModel;
 use Gamification\Model\AchivevemntModel;
 use Gamification\Model\UserTaskHistoryModel;
 use Gamification\Model\UserAchievmentModel;
+use Gamification\Model\UserCategoryModel;
 
 class PlayService
 {
@@ -41,6 +42,15 @@ class PlayService
 	public function getTasksByAchiemvent($id_achievment){
 		$taskByAchievment = $this->achieveTaskModel->getTaskByAchievment($id_achievment);
 		return $taskByAchievment;		
+	}
+	public function getCategoryByUser($id_user){
+	    $categoryByUser = $this->playModel->getCategoryByUser($id_user);
+		return $categoryByUser;
+	}
+
+	public function getLevelsByUser($id_user){
+	    $levelsByUser = $this->playModel->getLevelsByUser($id_user);
+		return $levelsByUser;
 	}
 	
 	public function getAchievmentsbyUser($id_user){

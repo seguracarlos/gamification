@@ -30,9 +30,12 @@ class GamificationController extends AbstractActionController
     	$id_category = 1;
     	$userInfo = $user->getUserById($id_user);
     	$achievementsByCategory = $playService->getAllAchievmentsWithTaskByCategory($id_category);
+        $categoryByUser = $playService->getCategoryByUser($id_user);
+        $levelsByUser = $playService->getLevelsByUser($id_user);
+        //echo "<pre>"; print_r($levelsByUser); exit;
         $taskMadeByUser = $playService->getTasksMadeByUser($id_user);
         $achievementsByUser = $userAchievmentsModel->getAchievmentMadeByUser($id_user);
-        $view = array('user' => $userInfo, 'achievments' => $achievementsByCategory,'taskMadeByUser' => $taskMadeByUser,'achievementsByUser' => $achievementsByUser);
+        $view = array('user' => $userInfo, 'achievments' => $achievementsByCategory,'taskMadeByUser' => $taskMadeByUser,'achievementsByUser' => $achievementsByUser,'categoryByUser' => $categoryByUser, 'levelsByUser' => $levelsByUser);
         return new ViewModel($view);
     }
     

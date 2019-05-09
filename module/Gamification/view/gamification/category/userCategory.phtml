@@ -1,0 +1,37 @@
+<?php echo "<pre>"; print_r($this->usercategory); exit; ?>
+<table class="table">
+	<thead>
+		<td>ID category</td>
+		<td>ID user</td>
+		<td>ID </td>
+		<td>Nombre</td>
+		<td>Insignia</td>
+		<td>Ruta</td>
+		<td>Puntos categoria</td>
+		<td>ID </td>
+		<td>Nombre</td>
+		<td>id Nivel</td>
+		<td>Puntos usuario</td>
+
+
+	</thead>
+	<tbody>
+		<!--Recorrer el arreglo-->
+		<?php foreach ($this->usercategory as $userscategory) {?>
+			<tr>
+				<td><?php echo $userscategory['id_category']; ?></td>
+				<td><?php echo $userscategory['id_user']; ?></td>
+				<td><?php echo $userscategory['id']; ?></td>
+				<td><?php echo $userscategory['name']; ?></td>
+				<td><?php echo $userscategory['badge']; ?></td>
+				<td><?php echo $userscategory['imgpath']; ?></td>
+				<td><?php echo $userscategory['points']; ?></td>
+				<td><?php echo $userscategory['id']; ?></td>
+				<td><?php echo $userscategory['name']; ?></td>
+				<td><?php echo $userscategory['id_levels']; ?></td>
+				<td><?php echo $userscategory['points']; ?></td>
+				
+			</tr>
+		<?php } ?>
+	</tbody>
+</table>

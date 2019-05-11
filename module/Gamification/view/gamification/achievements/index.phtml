@@ -1,0 +1,27 @@
+<?php  //echo "<pre>"; print_r($this->achievements); exit; ?>
+<table class="table">
+	<thead>
+		<td>ID</td>
+		<td>Nombre</td>
+		<td>Insignia</td>
+		<td>Ruta</td>
+		<td>Puntos</td>
+	</thead>
+	<tbody>
+		<!--Recorrer el arreglo-->
+		<?php foreach ($this->achievements as $achievements) {?>
+			<tr>
+				<td><?php echo $achievements['id']; ?></td>
+				<td><?php echo $achievements['name']; ?></td>
+				<td><?php echo $achievements['badge']; ?></td>
+				<td><?php echo $achievements['imgpath']; ?></td>
+				<td><?php echo $achievements['points']; ?></td>
+				<td><a class="btn btn-primary" href="<?php echo $this->basePath()."/gamification/achievements/update/".$achievements['id'];?>">Modificar</a></td>
+				<td><a class="btn btn-warning" href="<?php echo $this->basePath()."/gamification/achievements/delete/".$achievements['id'];?>">Eliminar</a></td>
+			</tr>
+		<?php } ?>
+	</tbody>
+</table>
+
+
+<a class="btn btn-warning" href="<?php echo $this->basePath()."/gamification/achievements/add"?>">Agregar logro</a>

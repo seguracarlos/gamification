@@ -53,7 +53,7 @@ class LevelsController extends AbstractActionController
 			$levels = $this->levelsService->updateLevels($formData);
 			if ($levels) {
 					# valida que la variable tenga algo para regresarlo.
-				$this->redirect()->toUrl($this->getRequest()->getBAseUrl().'/gamification/levels/');
+				$this->redirect()->toUrl($this->getRequest()->getBAseUrl().'/gamification/levels');
 			}
 		}
 		return array('form'=>$form);

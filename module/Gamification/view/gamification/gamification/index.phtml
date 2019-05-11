@@ -59,10 +59,33 @@
       	  	 </div>
     	 </div> 
        <?php }?>
+
+       <div class="col-md-9">
+       	<div class="panel panel-default">
+       		<div class="panel-heading">
+       			<label>Lista general</label><br> 
+       		</div>
+       	</div>       
+       	<table class="table">       				
+       		<thead>
+       			<td>Nombre de la categoria</td>
+       			<td>Nombre del logro</td>
+       		</thead>
+       		<tbody>
+       			<!--Recorrer el arreglo-->
+       			<?php foreach ($this->achievmentsByCategory as $achievmentsByCategory) {?>
+       				<tr>
+       					<td><?php echo $achievmentsByCategory['name_categories']; ?></td>       					
+       					<td><?php echo $achievmentsByCategory['name_achievments']; ?></td>
+       				</tr>
+       			<?php } ?>
+       		</tbody>
+       	</table>
+       </div>
         
      </div>
 
-
+      
 </div>
 
 <style>

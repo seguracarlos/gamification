@@ -47,6 +47,10 @@ class PlayService
 	    $categoryByUser = $this->playModel->getCategoryByUser($id_user);
 		return $categoryByUser;
 	}
+	public function getAchievmentsByCategory(){
+	    $achievmentsByCategory = $this->playModel->getAchievmentsByCategory();
+		return $achievmentsByCategory;
+	}
 
 	public function getLevelsByUser($id_user){
 	    $levelsByUser = $this->playModel->getLevelsByUser($id_user);

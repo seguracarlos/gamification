@@ -42,6 +42,20 @@ class PlayModel extends TableGateway
 	    return $result;
 
 	}
+	public function getAchievmentsByCategory(){		
+		$sql = new Sql($this->dbAdapter);
+		$select = $sql->select();
+		$select->from('achivecategory')
+		->join('achievements', 'achievements.id = achivecategory.id_achive',array('name_achievments' => 'name','points_achievments'=> 'points'))
+		->join('categories', 'categories.id = achivecategory.id_category',array('name_categories' => 'name','points_categories'=> 'points'));
+		//->where(array('id_achive' => $id_user));
+		$selectString = $sql->getSqlStringForSqlObject($select);
+		 $execute      = $this->dbAdapter->query($selectString, Adapter::QUERY_MODE_EXECUTE);
+        $result       = $execute->toArray();
+	    //print_r($result);exit;
+	    return $result;
+
+	}
 
 	public function getLevelsByUser($id_user){		
 		$sql = new Sql($this->dbAdapter);

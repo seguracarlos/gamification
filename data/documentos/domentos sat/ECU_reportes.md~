@@ -97,21 +97,21 @@
 		    (object Class "Usuario SAT"
 			quid       	"5CDCC0190126"
 			stereotype 	"Actor")
-		    (object UseCase "Desplegar reporte ISR, IVA, Pagos"
+		    (object UseCase "Desplegar reporte pagos"
 			quid       	"5CDCC02503C7"
 			visible_modules 	(list dependency_list
 			    (object Dependency_Relationship
 				quid       	"5CDCC99601F1"
-				supplier   	"Use Case View::Business Use-Case Model::Exportar reporte  ISR, IVA, Pagos"
+				supplier   	"Use Case View::Business Use-Case Model::Exportar reporte pagos"
 				quidu      	"5CDCC98901C3")))
-		    (object UseCase "Exportar reporte  ISR, IVA, Pagos"
+		    (object UseCase "Exportar reporte pagos"
 			quid       	"5CDCC98901C3")
 		    (object Association "$UNNAMED$0"
 			quid       	"5CDCC05D01B4"
 			roles      	(list role_list
 			    (object Role "$UNNAMED$1"
 				quid       	"5CDCC05E002E"
-				supplier   	"Use Case View::Business Use-Case Model::Desplegar reporte ISR, IVA, Pagos"
+				supplier   	"Use Case View::Business Use-Case Model::Desplegar reporte pagos"
 				quidu      	"5CDCC02503C7"
 				is_navigable 	TRUE)
 			    (object Role "$UNNAMED$2"
@@ -200,32 +200,7 @@
 			origin_x   	0
 			origin_y   	0
 			items      	(list diagram_item_list
-			    (object UseCaseView "Use Case View::Business Use-Case Model::Desplegar reporte ISR, IVA, Pagos" @3
-				location   	(1008, 496)
-				font       	(object Font
-				    size       	9
-				    face       	"Arial"
-				    bold       	FALSE
-				    italics    	FALSE
-				    underline  	FALSE
-				    strike     	FALSE
-				    color      	0
-				    default_color 	TRUE)
-				label      	(object ItemLabel
-				    Parent_View 	@3
-				    location   	(1008, 688)
-				    anchor_loc 	1
-				    nlines     	2
-				    max_width  	630
-				    justify    	0
-				    label      	"Desplegar reporte ISR, IVA, Pagos")
-				icon_style 	"Icon"
-				line_color 	3342489
-				fill_color 	13434879
-				quidu      	"5CDCC02503C7"
-				width      	344
-				height     	225)
-			    (object ClassView "Class" "Use Case View::Business Use-Case Model::Usuario SAT" @4
+			    (object ClassView "Class" "Use Case View::Business Use-Case Model::Usuario SAT" @3
 				ShowCompartmentStereotypes 	TRUE
 				IncludeAttribute 	TRUE
 				IncludeOperation 	TRUE
@@ -240,10 +215,10 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@4
+				    Parent_View 	@3
 				    location   	(416, 747)
 				    anchor_loc 	1
-				    nlines     	2
+				    nlines     	1
 				    max_width  	325
 				    justify    	0
 				    label      	"Usuario SAT")
@@ -255,6 +230,31 @@
 				height     	344
 				annotation 	8
 				autoResize 	TRUE)
+			    (object UseCaseView "Use Case View::Business Use-Case Model::Desplegar reporte pagos" @4
+				location   	(1008, 496)
+				font       	(object Font
+				    size       	9
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@4
+				    location   	(1008, 688)
+				    anchor_loc 	1
+				    nlines     	2
+				    max_width  	630
+				    justify    	0
+				    label      	"Desplegar reporte pagos")
+				icon_style 	"Icon"
+				line_color 	3342489
+				fill_color 	13434879
+				quidu      	"5CDCC02503C7"
+				width      	344
+				height     	225)
 			    (object AssociationViewNew "$UNNAMED$0" @5
 				location   	(684, 496)
 				font       	(object Font
@@ -277,7 +277,7 @@
 					line_color 	3342489
 					quidu      	"5CDCC05E002E"
 					client     	@5
-					supplier   	@3
+					supplier   	@4
 					vertices   	(list Points
 					    (684, 496)
 					    (836, 496))
@@ -289,13 +289,13 @@
 					line_color 	3342489
 					quidu      	"5CDCC05E0030"
 					client     	@5
-					supplier   	@4
+					supplier   	@3
 					vertices   	(list Points
 					    (684, 496)
 					    (532, 496))
 					line_style 	0)))
-			    (object UseCaseView "Use Case View::Business Use-Case Model::Exportar reporte  ISR, IVA, Pagos" @8
-				location   	(1776, 496)
+			    (object UseCaseView "Use Case View::Business Use-Case Model::Exportar reporte pagos" @8
+				location   	(1600, 496)
 				font       	(object Font
 				    size       	9
 				    face       	"Arial"
@@ -307,12 +307,12 @@
 				    default_color 	TRUE)
 				label      	(object ItemLabel
 				    Parent_View 	@8
-				    location   	(1776, 672)
+				    location   	(1600, 672)
 				    anchor_loc 	1
 				    nlines     	2
 				    max_width  	630
 				    justify    	0
-				    label      	"Exportar reporte  ISR, IVA, Pagos")
+				    label      	"Exportar reporte pagos")
 				icon_style 	"Icon"
 				line_color 	3342489
 				fill_color 	13434879
@@ -323,11 +323,11 @@
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5CDCC99601F1"
-				client     	@3
+				client     	@4
 				supplier   	@8
 				vertices   	(list Points
 				    (1174, 496)
-				    (1620, 496))
+				    (1447, 496))
 				line_style 	0)))))
 	    (object Class_Category "Use-Case Model"
 		quid       	"35B677F4010E"
@@ -688,15 +688,15 @@
 			(object State "$UNNAMED$6"
 			    quid       	"5CDCC9DD016A"
 			    type       	"StartState")
-			(object ActivityState "El usuario realiza la busqueda por número de control"
+			(object ActivityState "El usuario selecciona consultar reporte pagos indebidos"
 			    quid       	"5CDCC9DF02F0")
-			(object ActivityState "El sistema genera el reporte dependiendo al número de control ya sea ISR,IVA o Pagos"
+			(object ActivityState "El sistema genera el reporte pagos indebidos  con los datos solicitados"
 			    quid       	"5CDCCA0000BD")
 			(object ActivityState "Se visualiza el reporte"
 			    quid       	"5CDCCA430319")
 			(object Decision "$UNNAMED$7"
 			    quid       	"5CDCCA6202D9")
-			(object ActivityState "Exportar PDF ISR.IVA, pagos indebidos"
+			(object ActivityState "Exportar PDF pagos indebidos"
 			    quid       	"5CDCCA6E035B")
 			(object State "$UNNAMED$8"
 			    quid       	"5CDCCACC0336"
@@ -710,7 +710,7 @@
 		    transitions 	(list transition_list
 			(object State_Transition
 			    quid       	"5CDCC9FA0339"
-			    supplier   	"Use Case View::Use-Case Model::State/Activity Model::El usuario realiza la busqueda por número de control"
+			    supplier   	"Use Case View::Use-Case Model::State/Activity Model::El usuario selecciona consultar reporte pagos indebidos"
 			    supplier_quidu 	"5CDCC9DF02F0"
 			    client     	"$UNNAMED$6"
 			    client_quidu 	"5CDCC9DD016A"
@@ -718,9 +718,9 @@
 				quid       	"5CDCC9FA033C"))
 			(object State_Transition
 			    quid       	"5CDCCA3D01D1"
-			    supplier   	"Use Case View::Use-Case Model::State/Activity Model::El sistema genera el reporte dependiendo al número de control ya sea ISR,IVA o Pagos"
+			    supplier   	"Use Case View::Use-Case Model::State/Activity Model::El sistema genera el reporte pagos indebidos  con los datos solicitados"
 			    supplier_quidu 	"5CDCCA0000BD"
-			    client     	"Use Case View::Use-Case Model::State/Activity Model::El usuario realiza la busqueda por número de control"
+			    client     	"Use Case View::Use-Case Model::State/Activity Model::El usuario selecciona consultar reporte pagos indebidos"
 			    client_quidu 	"5CDCC9DF02F0"
 			    sendEvent  	(object sendEvent
 				quid       	"5CDCCA3D01D4"))
@@ -728,7 +728,7 @@
 			    quid       	"5CDCCA5D0060"
 			    supplier   	"Use Case View::Use-Case Model::State/Activity Model::Se visualiza el reporte"
 			    supplier_quidu 	"5CDCCA430319"
-			    client     	"Use Case View::Use-Case Model::State/Activity Model::El sistema genera el reporte dependiendo al número de control ya sea ISR,IVA o Pagos"
+			    client     	"Use Case View::Use-Case Model::State/Activity Model::El sistema genera el reporte pagos indebidos  con los datos solicitados"
 			    client_quidu 	"5CDCCA0000BD"
 			    sendEvent  	(object sendEvent
 				quid       	"5CDCCA5D0063"))
@@ -742,7 +742,7 @@
 				quid       	"5CDCCABE014C"))
 			(object State_Transition
 			    quid       	"5CDCCAC3025A"
-			    supplier   	"Use Case View::Use-Case Model::State/Activity Model::Exportar PDF ISR.IVA, pagos indebidos"
+			    supplier   	"Use Case View::Use-Case Model::State/Activity Model::Exportar PDF pagos indebidos"
 			    supplier_quidu 	"5CDCCA6E035B"
 			    client     	"$UNNAMED$7"
 			    client_quidu 	"5CDCCA6202D9"
@@ -752,7 +752,7 @@
 			    quid       	"5CDCCACF02C9"
 			    supplier   	"$UNNAMED$8"
 			    supplier_quidu 	"5CDCCACC0336"
-			    client     	"Use Case View::Use-Case Model::State/Activity Model::Exportar PDF ISR.IVA, pagos indebidos"
+			    client     	"Use Case View::Use-Case Model::State/Activity Model::Exportar PDF pagos indebidos"
 			    client_quidu 	"5CDCCA6E035B"
 			    sendEvent  	(object sendEvent
 				quid       	"5CDCCACF02CC"))
@@ -766,7 +766,7 @@
 				quid       	"5CDCCAE3034C"))
 			(object State_Transition
 			    quid       	"5CDCCAE602AA"
-			    supplier   	"Use Case View::Use-Case Model::State/Activity Model::El usuario realiza la busqueda por número de control"
+			    supplier   	"Use Case View::Use-Case Model::State/Activity Model::El usuario selecciona consultar reporte pagos indebidos"
 			    supplier_quidu 	"5CDCC9DF02F0"
 			    client     	"Use Case View::Use-Case Model::State/Activity Model::Regresar o limpiar"
 			    client_quidu 	"5CDCCAD3013B"
@@ -817,7 +817,7 @@
 				    line_color 	3342489
 				    quidu      	"5CDCC9DD016A"
 				    autoResize 	TRUE)
-				(object ActivityStateView "El usuario realiza la busqueda por número de control" @22
+				(object ActivityStateView "El usuario selecciona consultar reporte pagos indebidos" @22
 				    Parent_View 	@20
 				    location   	(1056, 256)
 				    font       	(object Font
@@ -837,7 +837,7 @@
 					nlines     	2
 					max_width  	540
 					justify    	0
-					label      	"El usuario realiza la busqueda por número de control")
+					label      	"El usuario selecciona consultar reporte pagos indebidos")
 				    icon_style 	"Icon"
 				    line_color 	3342489
 				    fill_color 	13434879
@@ -856,7 +856,7 @@
 					(1056, 204))
 				    line_style 	0
 				    x_offset   	FALSE)
-				(object ActivityStateView "El sistema genera el reporte dependiendo al número de control ya sea ISR,IVA o Pagos" @24
+				(object ActivityStateView "El sistema genera el reporte pagos indebidos  con los datos solicitados" @24
 				    Parent_View 	@20
 				    location   	(1056, 480)
 				    font       	(object Font
@@ -874,14 +874,14 @@
 					fill_color 	13434879
 					anchor_loc 	1
 					nlines     	2
-					max_width  	784
+					max_width  	624
 					justify    	0
-					label      	"El sistema genera el reporte dependiendo al número de control ya sea ISR,IVA o Pagos")
+					label      	"El sistema genera el reporte pagos indebidos  con los datos solicitados")
 				    icon_style 	"Icon"
 				    line_color 	3342489
 				    fill_color 	13434879
 				    quidu      	"5CDCCA0000BD"
-				    width      	890
+				    width      	730
 				    annotation 	1
 				    autoResize 	TRUE)
 				(object TransView "" @25
@@ -942,7 +942,7 @@
 				    fill_color 	13434879
 				    quidu      	"5CDCCA6202D9"
 				    autoResize 	TRUE)
-				(object ActivityStateView "Exportar PDF ISR.IVA, pagos indebidos" @29
+				(object ActivityStateView "Exportar PDF pagos indebidos" @29
 				    Parent_View 	@20
 				    location   	(1472, 1024)
 				    font       	(object Font
@@ -960,14 +960,14 @@
 					fill_color 	13434879
 					anchor_loc 	1
 					nlines     	2
-					max_width  	414
+					max_width  	342
 					justify    	0
-					label      	"Exportar PDF ISR.IVA, pagos indebidos")
+					label      	"Exportar PDF pagos indebidos")
 				    icon_style 	"Icon"
 				    line_color 	3342489
 				    fill_color 	13434879
 				    quidu      	"5CDCCA6E035B"
-				    width      	520
+				    width      	448
 				    annotation 	1
 				    autoResize 	TRUE)
 				(object TransView "" @30
@@ -978,7 +978,7 @@
 				    supplier   	@29
 				    vertices   	(list Points
 					(1131, 1024)
-					(1246, 1024))
+					(1273, 1024))
 				    line_style 	0
 				    x_offset   	FALSE)
 				(object StateView "EndState" "$UNNAMED$8" @31
@@ -1045,7 +1045,7 @@
 				    client     	@29
 				    supplier   	@31
 				    vertices   	(list Points
-					(1698, 1022)
+					(1671, 1023)
 					(1888, 1022)
 					(1888, 890))
 				    line_style 	0
@@ -1082,7 +1082,7 @@
 			max_height 	28350
 			max_width  	21600
 			origin_x   	0
-			origin_y   	1663
+			origin_y   	0
 			items      	(list diagram_item_list
 			    (object NoteView @38
 				location   	(448, 304)
@@ -1261,7 +1261,7 @@
 					    default_color 	TRUE)
 					label      	(object SegLabel @46
 					    Parent_View 	@45
-					    location   	(1095, 935)
+					    location   	(1096, 935)
 					    font       	(object Font
 						size       	9
 						face       	"Arial"
@@ -1288,7 +1288,7 @@
 					supplier   	@40
 					vertices   	(list Points
 					    (868, 976)
-					    (1152, 976))
+					    (1154, 976))
 					line_style 	0))))))))
 	logical_presentations 	(list unit_reference_list
 	    (object UseCaseDiagram "Main"
@@ -1405,96 +1405,6 @@
 	subsystem  	"Component View"
 	quidu      	"34DBB4830143"
 	logical_models 	(list unit_reference_list
-	    (object Class_Category "User Services"
-		attributes 	(list Attribute_Set
-		    (object Attribute
-			tool       	"VisualBasic"
-			name       	"TierPackage"
-			value      	"User Services"))
-		quid       	"5CDD87B70042"
-		documentation 	"User services provide the visual interface for presenting information and gathering data in an application. The user services connect the user with the application and request the business and/or data services needed by the user to execute business tasks."
-		visible_categories 	(list visibility_relationship_list
-		    (object Visibility_Relationship
-			attributes 	(list Attribute_Set
-			    (object Attribute
-				tool       	"VisualBasic"
-				name       	"TierPackage"
-				value      	"Business Services"))
-			quid       	"5CDD87B70045"
-			supplier   	"Logical View::Business Services"
-			quidu      	"5CDD87B70043")
-		    (object Visibility_Relationship
-			attributes 	(list Attribute_Set
-			    (object Attribute
-				tool       	"VisualBasic"
-				name       	"TierPackage"
-				value      	"Data Services"))
-			quid       	"5CDD87B70046"
-			supplier   	"Logical View::Data Services"
-			quidu      	"5CDD87B70044"))
-		exportControl 	"Public"
-		logical_models 	(list unit_reference_list)
-		logical_presentations 	(list unit_reference_list))
-	    (object Class_Category "Business Services"
-		attributes 	(list Attribute_Set
-		    (object Attribute
-			tool       	"VisualBasic"
-			name       	"TierPackage"
-			value      	"Business Services"))
-		quid       	"5CDD87B70043"
-		documentation 	"Business services respond to requests from the user (or other business services) in order to execute a business task. They accomplish this by requesting the data services needed and applying formal procedures and business rules to the relevant data. This protocol insulates the user from direct interaction with the database. Because business rules tend to change more frequently than the specific business tasks they support, they are ideal candidates for encapsulating in components that are physically separate from the application logic itself."
-		visible_categories 	(list visibility_relationship_list
-		    (object Visibility_Relationship
-			attributes 	(list Attribute_Set
-			    (object Attribute
-				tool       	"VisualBasic"
-				name       	"TierPackage"
-				value      	"User Services"))
-			quid       	"5CDD87B70047"
-			supplier   	"Logical View::User Services"
-			quidu      	"5CDD87B70042")
-		    (object Visibility_Relationship
-			attributes 	(list Attribute_Set
-			    (object Attribute
-				tool       	"VisualBasic"
-				name       	"TierPackage"
-				value      	"Data Services"))
-			quid       	"5CDD87B70048"
-			supplier   	"Logical View::Data Services"
-			quidu      	"5CDD87B70044"))
-		exportControl 	"Public"
-		logical_models 	(list unit_reference_list)
-		logical_presentations 	(list unit_reference_list))
-	    (object Class_Category "Data Services"
-		attributes 	(list Attribute_Set
-		    (object Attribute
-			tool       	"VisualBasic"
-			name       	"TierPackage"
-			value      	"Data Services"))
-		quid       	"5CDD87B70044"
-		documentation 	"Data services maintain, access, and update data. They also manage and satisfy requests to manipulate data that are initiated by business services. Separating data services allows the data structure and access mechanisms to be maintained, modified, or, if necessary, even re-architected without affecting business or user services."
-		visible_categories 	(list visibility_relationship_list
-		    (object Visibility_Relationship
-			attributes 	(list Attribute_Set
-			    (object Attribute
-				tool       	"VisualBasic"
-				name       	"TierPackage"
-				value      	"User Services"))
-			quid       	"5CDD87B70049"
-			supplier   	"Logical View::User Services"
-			quidu      	"5CDD87B70042")
-		    (object Visibility_Relationship
-			attributes 	(list Attribute_Set
-			    (object Attribute
-				tool       	"VisualBasic"
-				name       	"TierPackage"
-				value      	"Data Services"))
-			quid       	"5CDD87B7004A"
-			supplier   	"Logical View::Business Services"
-			quidu      	"5CDD87B70043"))
-		exportControl 	"Public"
-		logical_models 	(list unit_reference_list)
-		logical_presentations 	(list unit_reference_list))
 	    (object Class_Category "Business Object Model"
 		quid       	"35B678080064"
 		documentation 	
@@ -2161,84 +2071,6 @@
 				width      	700
 				height     	275))))))
 	logical_presentations 	(list unit_reference_list
-	    (object Tier_Diagram "Three-Tiered Service Model"
-		quid       	"5CDD87B7004B"
-		title      	"Three-Tiered Service Model"
-		documentation 	"A three-tiered architectural approach separates the various components of a client/server system into three tiers of services. The user services, business and other middle tier services, and data services are the logical tiers that collaborate in an application"
-		zoom       	100
-		max_height 	28350
-		max_width  	21600
-		origin_x   	0
-		origin_y   	0
-		items      	(list diagram_item_list
-		    (object TierView "User Services" @70
-			font       	(object Font
-			    size       	10
-			    face       	"Arial"
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			label      	(object ItemLabel
-			    Parent_View 	@70
-			    location   	(6, 6)
-			    nlines     	2
-			    max_width  	288
-			    justify    	0
-			    label      	"User Services")
-			icon_style 	"Icon"
-			hidden     	TRUE
-			quidu      	"5CDD87B70042"
-			width      	300
-			height     	180)
-		    (object TierView "Business Services" @71
-			location   	(600, 0)
-			font       	(object Font
-			    size       	10
-			    face       	"Arial"
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			label      	(object ItemLabel
-			    Parent_View 	@71
-			    location   	(606, 6)
-			    nlines     	2
-			    max_width  	288
-			    justify    	0
-			    label      	"Business Services")
-			icon_style 	"Icon"
-			hidden     	TRUE
-			quidu      	"5CDD87B70043"
-			width      	300
-			height     	180)
-		    (object TierView "Data Services" @72
-			location   	(1200, 0)
-			font       	(object Font
-			    size       	10
-			    face       	"Arial"
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			label      	(object ItemLabel
-			    Parent_View 	@72
-			    location   	(1206, 6)
-			    nlines     	2
-			    max_width  	288
-			    justify    	0
-			    label      	"Data Services")
-			icon_style 	"Icon"
-			hidden     	TRUE
-			quidu      	"5CDD87B70044"
-			width      	300
-			height     	180)))
 	    (object ClassDiagram "Welcome"
 		quid       	"3512226B0028"
 		title      	"Welcome"
@@ -2259,7 +2091,7 @@
 		origin_x   	0
 		origin_y   	0
 		items      	(list diagram_item_list
-		    (object NoteView @73
+		    (object NoteView @70
 			location   	(768, 384)
 			font       	(object Font
 			    size       	9
@@ -2271,7 +2103,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@73
+			    Parent_View 	@70
 			    location   	(121, 96)
 			    fill_color 	13434879
 			    nlines     	14
@@ -2331,7 +2163,7 @@
 			origin_x   	0
 			origin_y   	0
 			items      	(list diagram_item_list
-			    (object NoteView @74
+			    (object NoteView @71
 				location   	(624, 160)
 				font       	(object Font
 				    size       	9
@@ -2343,7 +2175,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@74
+				    Parent_View 	@71
 				    location   	(21, 26)
 				    fill_color 	13434879
 				    nlines     	5
@@ -2370,7 +2202,7 @@
 		origin_x   	0
 		origin_y   	0
 		items      	(list diagram_item_list
-		    (object SubSysView "Component View::Implementation Model" @75
+		    (object SubSysView "Component View::Implementation Model" @72
 			location   	(736, 800)
 			font       	(object Font
 			    size       	9
@@ -2382,7 +2214,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@75
+			    Parent_View 	@72
 			    location   	(552, 713)
 			    fill_color 	13434879
 			    nlines     	2
@@ -2445,7 +2277,7 @@
 		origin_x   	0
 		origin_y   	0
 		items      	(list diagram_item_list
-		    (object ProcessorView "<processor name>" @76
+		    (object ProcessorView "<processor name>" @73
 			location   	(512, 1056)
 			font       	(object Font
 			    size       	9
@@ -2457,7 +2289,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@76
+			    Parent_View 	@73
 			    location   	(276, 900)
 			    nlines     	2
 			    max_width  	400
@@ -2468,7 +2300,7 @@
 			width      	475
 			height     	381
 			annotation 	3)
-		    (object DeviceView "<device name>" @77
+		    (object DeviceView "<device name>" @74
 			location   	(1040, 1056)
 			font       	(object Font
 			    size       	9
@@ -2480,7 +2312,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@77
+			    Parent_View 	@74
 			    location   	(867, 950)
 			    nlines     	2
 			    max_width  	275
@@ -2491,16 +2323,16 @@
 			width      	350
 			height     	282
 			annotation 	0)
-		    (object ConnectionView "" @78
+		    (object ConnectionView "" @75
 			stereotype 	TRUE
 			quidu      	"34DBBD4B008C"
-			client     	@76
-			supplier   	@77
+			client     	@73
+			supplier   	@74
 			vertices   	(list Points
 			    (718, 1056)
 			    (865, 1056))
 			line_style 	0)
-		    (object NoteView @79
+		    (object NoteView @76
 			location   	(816, 304)
 			font       	(object Font
 			    size       	9
@@ -2512,7 +2344,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@79
+			    Parent_View 	@76
 			    location   	(38, 29)
 			    fill_color 	13434879
 			    nlines     	11
@@ -9875,94 +9707,6 @@
 			value      	"")))
 	    (object Attribute
 		tool       	"XML_DTD"
-		name       	"HiddenTool"
-		value      	FALSE)
-	    (object Attribute
-		tool       	"Apex"
-		name       	"propertyId"
-		value      	"809135966")
-	    (object Attribute
-		tool       	"Apex"
-		name       	"default__Project"
-		value      	(list Attribute_Set
-		    (object Attribute
-			tool       	"Apex"
-			name       	"CreateApexSubsystemAndView"
-			value      	"Yes")
-		    (object Attribute
-			tool       	"Apex"
-			name       	"ApexControlModel"
-			value      	("ApexControlModelSet" 301))
-		    (object Attribute
-			tool       	"Apex"
-			name       	"ApexConfiguration"
-			value      	"")
-		    (object Attribute
-			tool       	"Apex"
-			name       	"ApexSystemDescription"
-			value      	"")
-		    (object Attribute
-			tool       	"Apex"
-			name       	"ApexStorage"
-			value      	"")
-		    (object Attribute
-			tool       	"Apex"
-			name       	"ApexView"
-			value      	"")
-		    (object Attribute
-			tool       	"Apex"
-			name       	"ApexControlModelSet"
-			value      	(list Attribute_Set
-			    (object Attribute
-				tool       	"Apex"
-				name       	"Default"
-				value      	301)
-			    (object Attribute
-				tool       	"Apex"
-				name       	"Summit"
-				value      	302)
-			    (object Attribute
-				tool       	"Apex"
-				name       	"ClearCase"
-				value      	303)))))
-	    (object Attribute
-		tool       	"Apex"
-		name       	"default__Subsystem"
-		value      	(list Attribute_Set
-		    (object Attribute
-			tool       	"Apex"
-			name       	"ApexControlModel"
-			value      	("ApexControlModelSet" 301))
-		    (object Attribute
-			tool       	"Apex"
-			name       	"ApexStorage"
-			value      	"")
-		    (object Attribute
-			tool       	"Apex"
-			name       	"ApexSubsystem"
-			value      	"")
-		    (object Attribute
-			tool       	"Apex"
-			name       	"ApexView"
-			value      	"")
-		    (object Attribute
-			tool       	"Apex"
-			name       	"ApexControlModelSet"
-			value      	(list Attribute_Set
-			    (object Attribute
-				tool       	"Apex"
-				name       	"Default"
-				value      	301)
-			    (object Attribute
-				tool       	"Apex"
-				name       	"Summit"
-				value      	302)
-			    (object Attribute
-				tool       	"Apex"
-				name       	"ClearCase"
-				value      	303)))))
-	    (object Attribute
-		tool       	"Apex"
 		name       	"HiddenTool"
 		value      	FALSE))
 	quid       	"34DBB4830145"))
